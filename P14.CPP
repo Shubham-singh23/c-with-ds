@@ -1,0 +1,55 @@
+#include <iostream.h>
+#include <conio.h>
+class ary
+{
+ private:
+  int n;
+  float *a;
+ public:
+  ary();
+  void sortAry();
+  void dispAry();
+  ~ary();
+};
+ary::~ary()
+{
+ delete [] a;
+}
+void ary::dispAry()
+{
+ for(int i = 0; i < n; i++)
+  cout << a[i] << "\t";
+}
+void ary::sortAry()
+{
+ for(int i = 0; i < n - 1; i++)
+  for(int j = i + 1; j < n; j++)
+   if (a[i] > a[j])
+   {
+    float t;
+    t = a[i];
+    a[i] = a[j];
+    a[j] = t;
+   }
+}
+ary::ary()
+{
+ cout << "\n Enter Size of array: ";
+ cin >> n;
+ a = new float[n];
+ for(int i = 0; i < n; i++)
+ {
+  cout << "\n Enter value for a[" << i << "]: ";
+  cin >> a[i];
+ }
+}
+int main()
+{
+ clrscr();
+ ary obj;
+ obj.sortAry();
+ cout << "\n After Sorting: \n";
+ obj.dispAry();
+ getch();
+ return 0;
+}

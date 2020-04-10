@@ -1,0 +1,44 @@
+#include <iostream.h>
+#include <conio.h>
+class rbr
+{
+ private:
+  float ary[5];
+ public:
+  void init_ary();
+  void disp();
+  float & change(int);
+};
+float & rbr::change(int i)
+{
+
+ cout << ary[i];
+ return ary[i];
+}
+void rbr::disp()
+{
+ cout << "\n";
+ for(int i=0; i<5; i++)
+  cout << ary[i] << "\t";
+}
+void rbr::init_ary()
+{
+ ary[0] = 1.1;
+ ary[1] = 2.2;
+ ary[2] = 3.3;
+ ary[3] = 4.4;
+ ary[4] = 5.5;
+}
+
+int main()
+{
+ clrscr();
+ rbr obj;
+ obj.init_ary();
+ cout << "\n Initialised:";
+ obj.disp();
+ obj.change(2) = 9.9;
+ obj.disp();
+ getch();
+ return 0;
+}

@@ -1,0 +1,27 @@
+#include <iostream.h>
+#include <conio.h>
+class FunOver
+{
+ private:
+ public:
+  char * add(char, char);
+};
+char * FunOver::add(char i, char j)
+{
+ char *t;
+ t[0] = i;
+ t[1] = j;
+ t[2] = '\0';
+ return t;
+}
+int main()
+{
+ clrscr();
+//char a[3];
+ char *a;
+ FunOver obj;
+ a =  obj.add('A', 'B');
+ cout << a;
+ getch();
+ return 0;
+}
